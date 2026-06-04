@@ -35,7 +35,8 @@
                     <a class="nav-link" th:href="@{/admin/dashboard}">관리자</a>
                 </li>
             </ul>
-            <form th:action="@{/logout}" method="post" class="d-flex">
+            <form th:action="@{/logout}" method="post" class="d-flex gap-2">
+                <a th:href="@{/user/password}" class="btn btn-outline-warning btn-sm px-3">비밀번호 변경</a>
                 <button class="btn btn-outline-light btn-sm px-3">로그아웃</button>
             </form>
         </div>
@@ -43,6 +44,10 @@
 </nav>
 
 <div class="container">
+    <!-- 성공 알림 -->
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+        <span th:text="${successMessage}"></span>
+    </div>
     <!-- Welcome Card -->
     <div class="welcome-card p-4 mb-4">
         <h4 class="fw-bold mb-1">환영합니다!</h4>
